@@ -1,3 +1,5 @@
+import NativePackagerKeys._
+
 name := """play-originv3-test"""
 
 version := "1.0-SNAPSHOT"
@@ -12,3 +14,7 @@ libraryDependencies ++= Seq(
   cache,
   ws
 )
+
+maintainer in Docker := "John Smith <john.smith@example.com>"
+
+dockerExposedPorts in Docker := Seq(9000)
