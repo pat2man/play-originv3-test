@@ -18,3 +18,5 @@ libraryDependencies ++= Seq(
 maintainer in Docker := "John Smith <john.smith@example.com>"
 
 dockerExposedPorts in Docker := Seq(9000)
+
+dockerBaseImage := "java"
