@@ -1,5 +1,3 @@
-import NativePackagerKeys._
-
 name := """play-originv3-test"""
 
 version := "1.0-SNAPSHOT"
@@ -10,13 +8,13 @@ scalaVersion := "2.11.6"
 
 libraryDependencies ++= Seq(
   jdbc,
-  anorm,
   cache,
-  ws
+  ws,
+  specs2 % Test
 )
 
-maintainer in Docker := "John Smith <john.smith@example.com>"
+resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
 
-dockerExposedPorts in Docker := Seq(9000)
-
-dockerBaseImage := "java"
+// Play provides two styles of routers, one expects its actions to be injected, the
+// other, legacy style, accesses its actions statically.
+routesGenerator := InjectedRoutesGenerator
