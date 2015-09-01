@@ -18,3 +18,7 @@ resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
 // Play provides two styles of routers, one expects its actions to be injected, the
 // other, legacy style, accesses its actions statically.
 routesGenerator := InjectedRoutesGenerator
+
+libraryDependencies += "org.jolokia" % "jolokia-jvm" % "1.3.1" classifier "agent"
+
+bashScriptExtraDefines += """addJava "-javaagent:${lib_dir}/org.jolokia.jolokia-jvm-1.3.1-agent.jar""""
