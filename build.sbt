@@ -21,4 +21,4 @@ routesGenerator := InjectedRoutesGenerator
 
 libraryDependencies += "org.jolokia" % "jolokia-jvm" % "1.3.1" classifier "agent"
 
-bashScriptExtraDefines += """addJava "-javaagent:${lib_dir}/org.jolokia.jolokia-jvm-1.3.1-agent.jar""""
+bashScriptExtraDefines += """addJava "-javaagent:${lib_dir}/org.jolokia.jolokia-jvm-1.3.1-agent.jar=port=8778,host=0.0.0.0""""
